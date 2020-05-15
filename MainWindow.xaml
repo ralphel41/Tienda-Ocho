@@ -1,0 +1,18 @@
+﻿<Window x:Name="wndwLogeo" x:Class="Tienda_Ocho.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tienda_Ocho"
+        mc:Ignorable="d"
+        Title="Abarrotes Ocho" Height="416.478" Width="419.074" Background="#FF87A827" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize" Loaded="WndwLogeo_Loaded">
+    <Grid>
+        <Label x:Name="lblNombreTienda" Content="Abarrotes Ocho" HorizontalAlignment="Left" Height="74" Margin="39,41,0,0" VerticalAlignment="Top" Width="351" FontSize="48" Foreground="#FF13741F"/>
+        <Label x:Name="lblusuario" Content="Usuario" HorizontalAlignment="Left" Margin="162,132,0,0" VerticalAlignment="Top" Height="35" Width="71" FontSize="16" Foreground="White"/>
+        <TextBox x:Name="txtbxUsuario" HorizontalAlignment="Left" Height="29" Margin="97,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <Label x:Name="lblcontrasena" Content="Contraseña" HorizontalAlignment="Left" Margin="147,215,0,0" VerticalAlignment="Top" Height="37" Width="97" FontSize="16" Foreground="White"/>
+        <PasswordBox x:Name="pwdbxContraseña" HorizontalAlignment="Left" Margin="97,257,0,0" VerticalAlignment="Top" Height="29" Width="196"/>
+        <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="147,308,0,0" VerticalAlignment="Top" Width="97" Height="32" FontSize="16" Click="BtnIngresar_Click"/>
+        <Border x:Name="brdrNombre" BorderBrush="#FF0A740B" BorderThickness="5" HorizontalAlignment="Left" Height="74" Margin="10,41,0,0" VerticalAlignment="Top" Width="393"/>
+    </Grid>
+</Window>

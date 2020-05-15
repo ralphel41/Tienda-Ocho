@@ -1,0 +1,87 @@
+﻿<Window x:Name="wndwPantallaPrin" x:Class="Tienda_Ocho.PantallaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tienda_Ocho"
+        mc:Ignorable="d"
+        Title="Pantalla Principal" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="WndwPantallaPrin_Loaded">
+    <Grid>
+        <Label x:Name="lblUsuario" Content="Usuario: [Nombre]" HorizontalAlignment="Left" Margin="641,10,0,0" VerticalAlignment="Top" Height="32" Width="143"/>
+        <TabControl HorizontalAlignment="Left" Height="368" Margin="10,42,0,0" VerticalAlignment="Top" Width="774">
+            <TabItem x:Name="tbVentas" Header="Ventas">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txtbxProducto" HorizontalAlignment="Left" Height="26" Margin="190,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" KeyDown="TxtbxProducto_KeyDown"/>
+                    <Label Content="Ingresa el codigo del producto:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.297,-0.073" Height="26" Width="180"/>
+                    <Button x:Name="btnMasUno" Content="+1" HorizontalAlignment="Left" Height="26" Margin="412,14,0,0" VerticalAlignment="Top" Width="39" Click="Button_Click"/>
+                    <Label x:Name="lblCnt" Content="[cnt]" HorizontalAlignment="Left" Margin="472,14,0,0" VerticalAlignment="Top" Height="26" Width="50"/>
+                    <Label x:Name="lblDescripcion" Content="[Descripcion]" HorizontalAlignment="Left" Height="27" Margin="266,57,0,0" VerticalAlignment="Top" Width="243"/>
+                    <Label x:Name="lblProductoNombre" Content="[Nombre del Producto]" HorizontalAlignment="Left" Margin="27,58,0,0" VerticalAlignment="Top" Width="218"/>
+                    <Label x:Name="lblPrecioUnitario" Content="[Precio Unitario]" HorizontalAlignment="Left" Height="26" Margin="572,58,0,0" VerticalAlignment="Top" Width="164"/>
+                    <DataGrid x:Name="dtgrdProductos" HorizontalAlignment="Left" Height="133" Margin="27,101,0,0" VerticalAlignment="Top" Width="721"/>
+                    <Button x:Name="btnEfectivo" Content="Efectivo" HorizontalAlignment="Left" Height="26" Margin="135,288,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_1"/>
+                    <Label Content="Pagar con:" HorizontalAlignment="Left" Margin="41,288,0,0" VerticalAlignment="Top" Height="26" Width="73"/>
+                    <Button x:Name="btnPagarTarjeta" Content="Tarjeta" HorizontalAlignment="Left" Height="26" Margin="266,288,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click_2"/>
+                    <Label Content="subtotal:" HorizontalAlignment="Left" Height="26" Margin="554,239,0,0" VerticalAlignment="Top" Width="64"/>
+                    <Label x:Name="lblIVA" Content="IVA" HorizontalAlignment="Left" Margin="554,270,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Total a Pagar:" HorizontalAlignment="Left" Height="29" Margin="534,301,0,0" VerticalAlignment="Top" Width="84"/>
+                    <Label x:Name="lblSubtotal" Content="[subTotal]" HorizontalAlignment="Left" Height="26" Margin="639,239,0,0" VerticalAlignment="Top" Width="109"/>
+                    <Label x:Name="lblIVAvalue" Content="[ IVA ]" HorizontalAlignment="Left" Margin="639,270,0,0" VerticalAlignment="Top" Width="109"/>
+                    <Label x:Name="lblTotal" Content="[Total a Pagar]" HorizontalAlignment="Left" Margin="639,301,0,0" VerticalAlignment="Top" Width="109"/>
+                    <ComboBox x:Name="cmbBxClientes" HorizontalAlignment="Left" Margin="628,14,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="CmbBxClientes_DropDownClosed"/>
+                    <Label Content="Cliente:" HorizontalAlignment="Left" Height="26" Margin="566,14,0,0" VerticalAlignment="Top" Width="57"/>
+                    <Button x:Name="btnAgregar" Content="Agregar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="103,239,0,0" Click="Button_Click_3" Height="23"/>
+                    <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Height="26" Margin="412,288,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_4"/>
+                    <Label x:Name="lblCantArticulos" Content="[Cnt Items]" HorizontalAlignment="Left" Margin="472,239,0,0" VerticalAlignment="Top" Width="68"/>
+                    <Label x:Name="lblProductos" Content="[Cnt Productos]" HorizontalAlignment="Left" Margin="372,239,0,0" VerticalAlignment="Top" Height="26" Width="95"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabAltas" Header="Altas" GotFocus="TabAltas_GotFocus">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="119*"/>
+                        <ColumnDefinition Width="650*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnInventarioInicial" Content="Inventario Inicial" HorizontalAlignment="Left" Margin="467.2,10,0,0" VerticalAlignment="Top" Width="160" Height="22" Click="BtnInventarioInicial_Click" Grid.Column="1"/>
+                    <DataGrid x:Name="DtaGrdInventario" HorizontalAlignment="Left" Height="294" VerticalAlignment="Top" Width="749" Margin="10,46,0,0" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnInventarioActual" Content="Inventario Actual" HorizontalAlignment="Left" Margin="296.2,11,0,0" VerticalAlignment="Top" Width="156" Height="22" Click="BtnInventarioActual_Click" Grid.Column="1"/>
+                    <TextBox x:Name="txtbxBuscar" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Margin="114,10,0,0" Grid.ColumnSpan="2" KeyDown="TxtbxBuscar_KeyDown"/>
+                    <Label x:Name="lblBuscar" Content="Buscar Id Producto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="22" Width="120" FontSize="11" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblMostrando" Content="[Mostrando]" HorizontalAlignment="Left" Margin="159.2,11,0,0" VerticalAlignment="Top" Height="31" Width="119" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Compras" GotFocus="TabItem_GotFocus">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="lblProveedor" Content="Proveedor:" HorizontalAlignment="Left" Margin="188,71,0,0" VerticalAlignment="Top" Width="82"/>
+                    <Label x:Name="lblProducto" Content="Producto:" HorizontalAlignment="Left" Margin="188,118,0,0" VerticalAlignment="Top" Width="82"/>
+                    <Label x:Name="lblCantidad" Content="Cantidad:" HorizontalAlignment="Left" Margin="188,167,0,0" VerticalAlignment="Top" Width="82"/>
+                    <ComboBox x:Name="cmbBxProveedor" HorizontalAlignment="Left" Margin="275,71,0,0" VerticalAlignment="Top" Width="162" DropDownClosed="CmbBxProveedor_DropDownClosed"/>
+                    <ComboBox x:Name="cmbBxProducto" HorizontalAlignment="Left" Margin="275,121,0,0" VerticalAlignment="Top" Width="162" DropDownClosed="CmbBxProducto_DropDownClosed"/>
+                    <TextBox x:Name="txtBxCantidad" HorizontalAlignment="Left" Height="22" Margin="275,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" KeyDown="TxtBxCantidad_KeyDown"/>
+                    <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="299,212,0,0" VerticalAlignment="Top" Width="101" Height="24" Click="BtnIngresar_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Bajas">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="tbCambios" Header="Cambios" GotFocus="TbCambios_GotFocus">
+                <Grid Background="#FFE5E5E5" Loaded="Grid_Loaded">
+                    <Label x:Name="lblCambioProveedor" Content="Proveedor:" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" Width="71" Height="24"/>
+                    <Label x:Name="lblCambiosProducto" Content="Producto:" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="-1.177,-0.82"/>
+                    <Label x:Name="lblCambioCantidad" Content="Cantidad" HorizontalAlignment="Left" Margin="24,124,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="-1.966,-1.414"/>
+                    <Button x:Name="btnCambiar" Content="Cambiar" HorizontalAlignment="Left" Margin="10,306,0,0" VerticalAlignment="Top" Width="120" Height="24" Click="BtnCambiar_Click"/>
+                    <ComboBox x:Name="cmbBxCambioProveedor" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="CmbBxCambioProveedor_DropDownClosed"/>
+                    <ComboBox x:Name="cmbBxCambioProducto" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.197,0.543" DropDownClosed="CmbBxCambioProducto_DropDownClosed"/>
+                    <TextBox x:Name="txtBxCambioCantidad" HorizontalAlignment="Left" Height="23" Margin="10,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TxtBxCambioCantidad_KeyDown"/>
+                    <DataGrid x:Name="dtGrdCambios" HorizontalAlignment="Left" Height="260" Margin="171,39,0,0" VerticalAlignment="Top" Width="564"/>
+                    <TextBox x:Name="txtBxComentarios" HorizontalAlignment="Left" Height="92" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="10,207,0,0" KeyDown="TxtBxComentarios_KeyDown"/>
+                    <Label x:Name="lblComentarios" Content="Comentarios" HorizontalAlignment="Left" Margin="18,181,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="48" Margin="434,11,0,0" VerticalAlignment="Top" Width="187">
+            <Label x:Name="lblAppName" Content="Abarrotes Ocho" HorizontalAlignment="Left" Height="48" Margin="-0.8,-0.8,-0.6,-0.8" VerticalAlignment="Top" Width="187" FontSize="24" RenderTransformOrigin="0.632,0.472"/>
+        </Border>
+
+    </Grid>
+</Window>
